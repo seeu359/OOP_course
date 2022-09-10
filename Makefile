@@ -5,4 +5,4 @@ pyt:
 	poetry run pytest
 
 test-coverage:
-	poetry run pytest --cov=OOP --cov-report xml tests/
+	poetry run pytest --cov=oop --cov-report xml tests/
