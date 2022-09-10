@@ -1,6 +1,4 @@
-from part_1.classes_and_objects import database
-from part_1.classes_and_objects import goods
-from part_1.classes_and_objects import car
+from OOP.part_1.classes_and_objects import car, goods, database
 
 
 def test_database():
