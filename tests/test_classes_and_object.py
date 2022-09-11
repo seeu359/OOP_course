@@ -72,4 +72,5 @@ def test_figure2(figure_fixture):
 
 
 def test_person(person_fixture):
+    assert getattr(figure.Figure, 'job', 'Программист')
     assert person_fixture is False
