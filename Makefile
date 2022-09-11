@@ -1,6 +1,9 @@
 install:
 	poetry install
 
+lint:
+	poetry run flake8 oop
+
 pyt:
 	poetry run pytest
 
