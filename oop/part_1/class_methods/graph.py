@@ -45,3 +45,5 @@ class Graph:
 graph_1 = Graph()
 
 graph_1.set_data([10, -5, 100, 20, 0, 80, 45, 2, 5, 7])
+
+print(graph_1.draw())
