@@ -1,7 +1,6 @@
 import pytest
 
-from oop.part_1.class_methods import media_player
-
+from oop.part_1.class_methods import media_player, database
 
 
 @pytest.mark.parametrize('input_value, object_attr, expected',
@@ -20,3 +19,15 @@ def test_graph(graph_fixture, graph_fixture2):
     fixture2_result = '-8 0 -10 13 20 0 -5 4'
     assert fixture1_result == graph_fixture
     assert fixture2_result == graph_fixture2
+
+
+def test_database():
+    list_input = ['1 Ivan 46 300000', '2 Alexey 27 270000', '3 John 30 180000']
+    _database = database.DataBase()
+    _database.insert(list_input)
+    result = _database.select(2, 5)
+    assert result == [{'id': '3',
+                       'name': 'John',
+                       'old': '30',
+                       'salary': '180000'}]
+    assert _database.lst_data[1]['name'] == 'Alexey'
