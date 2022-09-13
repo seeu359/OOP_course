@@ -1,7 +1,8 @@
 import pytest
 
 from oop.part_1.classes_and_objects import figure, person
-from oop.part_1.class_methods import graph
+from oop.part_1.class_methods import graph, translator
+
 
 @pytest.fixture()
 def figure_fixture():
@@ -32,3 +33,14 @@ def graph_fixture2():
     test_graph.set_data([-8, 0, -10, 13, 40, 20, 0, 21, -5, 4])
     test_draw = test_graph.draw()
     return test_draw
+
+
+@pytest.fixture()
+def translator_fixture():
+    test_translator_obj = translator.Translator()
+    test_translator_obj.add('go', 'ходить')
+    test_translator_obj.add('go', 'ехать')
+    test_translator_obj.add('swim', 'плавать')
+    test_translator_obj.add('swim', 'плавать')
+    test_translator_obj.add('go', 'ехать')
+    return test_translator_obj
