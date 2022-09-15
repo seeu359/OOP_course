@@ -2,6 +2,7 @@ import pytest
 
 from oop.part_1.classes_and_objects import figure, person
 from oop.part_1.class_methods import graph, translator
+from oop.part_1.initializer_init import cpu
 
 
 @pytest.fixture()
@@ -44,3 +45,11 @@ def translator_fixture():
     test_translator_obj.add('swim', 'плавать')
     test_translator_obj.add('go', 'ехать')
     return test_translator_obj
+
+
+@pytest.fixture()
+def cpu_fixture():
+    my_cpu = cpu.CPU('RYZEN', 2.2)
+    memory = cpu.Memory('Hyper1', 3000), cpu.Memory('hyper2', 2000)
+    return my_cpu, memory
+
