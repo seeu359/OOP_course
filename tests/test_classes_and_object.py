@@ -1,7 +1,6 @@
 import pytest
-
 from oop.part_1.classes_and_objects import car, goods, database, notes, \
-    dictionary, travel_blog, figure, person
+    dictionary, travel_blog, figure
 
 
 @pytest.mark.parametrize('input_value, expected',
