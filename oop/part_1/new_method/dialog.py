@@ -43,5 +43,3 @@ class Dialog:
 
 
 dlg = Dialog('new_obj')
-
-print(dlg.name)
