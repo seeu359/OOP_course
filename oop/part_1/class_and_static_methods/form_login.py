@@ -38,10 +38,11 @@ get_html(self) - возвращает сформированную HTML-стро
 
 <p class='login'>Логин: <input type='text' size=10 />
 
-Также классы TextInput и PasswordInput должны иметь метод класса (@classmethod):
+Также классы TextInput и PasswordInput должны иметь метод класса
+(@classmethod):
 
-check_name(cls, name) - для проверки корректности переданного имя поля (следует
-вызывать в инициализаторе) по следующим критериям:
+check_name(cls, name) - для проверки корректности переданного имя поля
+(следует вызывать в инициализаторе) по следующим критериям:
 
 - длина имени не менее 3 символов и не более 50;
 - в именах могут использоваться только символы русского, английского алфавитов,
@@ -98,7 +99,6 @@ class TextInput:
             raise ValueError('некорректное поле name')
 
 
-
 class PasswordInput:
     LOGIN_MIN_SIZE = 3
     LOGIN_MAX_SIZE = 50
@@ -119,9 +119,3 @@ class PasswordInput:
         if not cls.LOGIN_MIN_SIZE <= len(name) <= cls.LOGIN_MAX_SIZE or \
                 len(name.strip(cls.CHARS_CORRECT)) != 0:
             raise ValueError('некорректное поле name')
-
-
-try:
-    print(TextInput('wew'))
-except ValueError as e:
-    print(e)

@@ -30,6 +30,7 @@ pt = Point(3, 2)
 
 pt_clone = Point(1, 2).clone()
 
+
 class Loader:
     @classmethod
     def json_parse(cls):
