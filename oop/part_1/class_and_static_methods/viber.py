@@ -61,3 +61,4 @@ class Message:
     def __init__(self, text, fl_like=False):
         self.text = text
         self.fl_like = fl_like
+
