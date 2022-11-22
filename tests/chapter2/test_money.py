@@ -1,5 +1,4 @@
 import pytest
-
 from oop.part_2.private_public_method_setters_and_getters.money import Money
 
 

@@ -10,6 +10,7 @@ def test_clock():
     assert clock2.get_time() == 0
     assert clock3.get_time() == 20
 
+
 def test_set_value_for_clock():
 
     clock = Clock(20)
