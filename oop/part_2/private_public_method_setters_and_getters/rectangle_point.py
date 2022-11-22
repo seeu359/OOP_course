@@ -62,7 +62,7 @@ class Rectangle:
             self.__ep: Point = self.__args[1]
         else:
             self.__sp: Point = Point(self.__args[0], self.__args[1])
-            self.__ep: Point = Point(self.__args[2],self.__args[3])
+            self.__ep: Point = Point(self.__args[2], self.__args[3])
 
     def __check_on_type_point(self):
         for obj in self.__args:
@@ -81,4 +81,3 @@ class Rectangle:
     def draw(self):
         print(f'Прямоугольник с координатами: {self.__sp.get_coords()} '
               f'{self.__ep.get_coords()}')
-
