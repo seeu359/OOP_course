@@ -3,7 +3,8 @@ import pytest
 from oop.part_1.classes_and_objects import figure, person
 from oop.part_1.class_methods import graph, translator
 from oop.part_1.initializer_init import cpu
-
+from oop.part_2.private_public_method_setters_and_getters.linked_list\
+    import ObjList
 
 @pytest.fixture()
 def figure_fixture():
@@ -53,3 +54,12 @@ def cpu_fixture():
     memory = cpu.Memory('Hyper1', 3000), cpu.Memory('hyper2', 2000)
     return my_cpu, memory
 
+
+@pytest.fixture()
+def object_lists():
+    objects_dict = {
+        1: ObjList('data1'),
+        2: ObjList('data2'),
+        3: ObjList('data3'),
+    }
+    return objects_dict
