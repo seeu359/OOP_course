@@ -91,6 +91,3 @@ class EmailValidator:
         if isinstance(email, str):
             return True
         return False
-
-
-print(EmailValidator.check_email('heel23fewqo@gmai.l.com'))
