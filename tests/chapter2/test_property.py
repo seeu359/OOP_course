@@ -3,7 +3,7 @@ from string import ascii_letters
 from oop.part_2.propetry.car import Car
 from oop.part_2.propetry.window_dlg import WindowDlg
 from oop.part_2.propetry.radius_vector import RadiusVector2D
-
+from oop.part_2.propetry import stack_object as so
 
 def test_car():
     car = Car()
@@ -38,3 +38,33 @@ def test_test_radius_vector():
     assert rv.y == 0
     assert rv.x == 12.2
     assert round(norm, 2) == 148.84
+
+
+def test_stack():
+    s = so.Stack()
+    top = so.StackObj("obj_1")
+    s.push(top)
+    s.push(so.StackObj("obj_2"))
+    s.push(so.StackObj("obj_3"))
+    s.pop()
+
+    res = s.get_data()
+    assert res == ["obj_1",
+                   "obj_2"]
+    assert s.top == top
+
+
+def test_data_which_return_pop_method():
+    s = so.Stack()
+    top = so.StackObj("name_1")
+    s.push(top)
+    obj = s.pop()
+    assert obj == top
+
+
+def test_stack_which_return_empty_list():
+    s = so.Stack()
+    top = so.StackObj("obj_1")
+    s.push(top)
+    s.pop()
+    assert s.get_data() == []
