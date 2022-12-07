@@ -61,12 +61,11 @@ class TableSheet:
     def __init__(self, n, m):
         self.N = n
         self.M = m
-        self.cells = [[Cell() for i in range(m)] for
-                      j in range(n)]
+        self.cells = [[Cell() for _ in range(m)] for
+                      _ in range(n)]
 
 
 table = TableSheet(5, 3)
 
 table.cells = [[Cell(float(i + 1 + j * table.M)) for i in range(table.M)]
                for j in range(table.N)]
-print(table.cells[2][2].value)
