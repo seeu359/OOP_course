@@ -4,6 +4,9 @@ from oop.part_2.propetry.car import Car
 from oop.part_2.propetry.window_dlg import WindowDlg
 from oop.part_2.propetry.radius_vector import RadiusVector2D
 from oop.part_2.propetry import stack_object as so
+from oop.part_2.propetry import tree_obj
+from oop.part_2.propetry.path_lines import LineTo, PathLines
+
 
 def test_car():
     car = Car()
@@ -68,3 +71,26 @@ def test_stack_which_return_empty_list():
     s.push(top)
     s.pop()
     assert s.get_data() == []
+
+
+def test_tree_obj1(test_data_for_tree_obj):
+    root = test_data_for_tree_obj
+    assert tree_obj.DecisionTree.predict(root, [1, 1, 0]) == 'test1'
+
+
+def test_path_lines():
+    path_line = PathLines(LineTo(2, 1), PathLines(3, 1))
+    assert len(path_line.points) == 3
+    path_line.add_line(LineTo(5, 10))
+    last_obj = path_line.points[-1]
+    assert len(path_line.get_path()) == 4
+    assert last_obj.y == 10
+    assert last_obj.x == 5
+
+
+def test_path_line_main_logic():
+    p = PathLines(LineTo(1, 2))
+    assert round(p.get_length(), 2) == 2.24
+    p.add_line(LineTo(10, 20))
+    p.add_line(LineTo(5, 17))
+    assert round(p.get_length(), 2) == 28.19

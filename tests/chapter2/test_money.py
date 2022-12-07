@@ -5,7 +5,7 @@ from oop.part_2.private_public_method_setters_and_getters.money import Money
 @pytest.mark.parametrize('value, expected',
                          [(-5, 20),
                           (40, 40),
-                          (0, 0)
+                          (0, 0),
                          ])
 def test_invalid_money_value(value, expected):
 

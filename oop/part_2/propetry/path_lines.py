@@ -85,6 +85,7 @@ class PathLines:
                         self.points[n_ind],
                         res,
                         pr_ind,
-                        n_ind,)
+                        n_ind,
+                )
         return count_sum_length(self.start_point, self.points[1],
                                 length, 0, 1)

@@ -1,5 +1,5 @@
 import pytest
-
+from oop.part_2.propetry import tree_obj
 from oop.part_1.classes_and_objects import figure, person
 from oop.part_1.class_methods import graph, translator
 from oop.part_1.initializer_init import cpu
@@ -63,3 +63,17 @@ def object_lists():
         3: ObjList('data3'),
     }
     return objects_dict
+
+
+@pytest.fixture()
+def test_data_for_tree_obj():
+    root = tree_obj.DecisionTree.add_obj(tree_obj.TreeObj(0))
+    obj1 = tree_obj.DecisionTree.add_obj(tree_obj.TreeObj(1), root)
+    obj2 = tree_obj.DecisionTree.add_obj(tree_obj.TreeObj(2), root, False)
+    tree_obj.DecisionTree.add_obj(tree_obj.TreeObj(-1, 'test1'), obj1)
+    tree_obj.DecisionTree.add_obj(tree_obj.TreeObj(-1, 'test2'), obj1, False)
+    tree_obj.DecisionTree.add_obj(
+        tree_obj.TreeObj(-1, "test3"), obj2
+    )
+    tree_obj.DecisionTree.add_obj(tree_obj.TreeObj(-1, "test4"), obj2, False)
+    return root
