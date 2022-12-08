@@ -63,9 +63,3 @@ class TableSheet:
         self.M = m
         self.cells = [[Cell() for _ in range(m)] for
                       _ in range(n)]
-
-
-table = TableSheet(5, 3)
-
-table.cells = [[Cell(float(i + 1 + j * table.M)) for i in range(table.M)]
-               for j in range(table.N)]
