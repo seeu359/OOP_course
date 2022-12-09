@@ -78,3 +78,20 @@ def test_bag():
     _bag.add_thing(thing2)
     _bag.add_thing(thing3)
     assert len(_bag.things) == 2
+
+
+def test_tv_program(test_data_for_tv_program):
+    tv_pr = test_data_for_tv_program
+    assert hasattr(tv_pr, 'items') and hasattr(tv_pr, 'name')
+
+
+def test_add_to_tv_program(test_data_for_tv_program):
+    tv_pr = test_data_for_tv_program
+    assert len(tv_pr.items) == 3
+
+
+def test_delete_from_tv_program(test_data_for_tv_program):
+    tv_pr = test_data_for_tv_program
+    tv_pr.remove_telecast(2)
+    assert tv_pr.items[-1].uid == 3
+    assert tv_pr.items[1].uid, tv_pr.items[0].uid == (3, 1)

@@ -5,6 +5,8 @@ from oop.part_1.class_methods import graph, translator
 from oop.part_1.initializer_init import cpu
 from oop.part_2.private_public_method_setters_and_getters.linked_list\
     import ObjList
+from oop.part_2.descriptors import tv_program as tp
+
 
 @pytest.fixture()
 def figure_fixture():
@@ -77,3 +79,15 @@ def test_data_for_tree_obj():
     )
     tree_obj.DecisionTree.add_obj(tree_obj.TreeObj(-1, "test4"), obj2, False)
     return root
+
+
+@pytest.fixture()
+def test_data_for_tv_program():
+    tv_pr = tp.TVProgram('SomeProgram')
+    telecast1 = tp.Telecast(1, 'name', 1000)
+    telecast2 = tp.Telecast(3, 'name', 50000)
+    telecast3 = tp.Telecast(2, 'name', 1000)
+    tv_pr.add_telecast(telecast1)
+    tv_pr.add_telecast(telecast2)
+    tv_pr.add_telecast(telecast3)
+    return tv_pr

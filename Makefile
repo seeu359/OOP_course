@@ -4,7 +4,7 @@ install:
 lint:
 	poetry run flake8 oop
 
-pyt:
+test:
 	poetry run pytest
 
 test-coverage:
