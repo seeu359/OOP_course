@@ -90,5 +90,3 @@ class Product:
             raise AttributeError("Атрибут id удалять запрещено.")
         else:
             object.__delattr__(self, item)
-
-book = Product("Питон и ООП", 200, 24)
