@@ -6,6 +6,7 @@ from oop.part_1.initializer_init import cpu
 from oop.part_2.private_public_method_setters_and_getters.linked_list\
     import ObjList
 from oop.part_2.descriptors import tv_program as tp
+from oop.part_3.setattr_getattr_getattribute_delattr import smartphone
 
 
 @pytest.fixture()
@@ -91,3 +92,13 @@ def test_data_for_tv_program():
     tv_pr.add_telecast(telecast2)
     tv_pr.add_telecast(telecast3)
     return tv_pr
+
+
+@pytest.fixture()
+def test_data_for_smartphone():
+    _smartphone = smartphone.SmartPhone('SmartPhone')
+    vk_app = smartphone.AppVK()
+    yt_app = smartphone.AppYouTube(1024)
+    phone_app = smartphone.AppPhone({'new': 1234, 'another': 12345})
+    list(map(_smartphone.add_app, [vk_app, yt_app, phone_app]))
+    return _smartphone

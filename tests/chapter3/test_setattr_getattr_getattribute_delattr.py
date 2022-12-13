@@ -1,6 +1,7 @@
 import pytest
+from loguru import logger
 from oop.part_3.setattr_getattr_getattribute_delattr import book, shop, \
-    course, museum
+    course, museum, smartphone, circle
 
 
 @pytest.mark.parametrize('title, author, pages, year, exp_title, exp_pages',
@@ -91,3 +92,34 @@ def test_museum():
     assert len(_museum.exhibits) == 3
     _museum.remove_exhibit(mummies)
     assert mummies not in _museum.exhibits
+
+
+def test_smartphone(test_data_for_smartphone):
+    _smartphone = test_data_for_smartphone
+    assert len(_smartphone.apps) == 3
+    new_yt_app = smartphone.AppYouTube(1204)
+    _smartphone.add_app(new_yt_app)
+    logger.info(_smartphone.apps)
+    assert len(_smartphone.apps) == 3
+    assert new_yt_app not in _smartphone.apps
+
+
+def test_circle():
+    _circle = circle.Circle(1, 2, 5)
+    _circle.radius = -2
+    _circle.x = 5
+    _circle.y = 3
+    assert _circle.radius == 5
+    assert _circle.x == 5
+    assert _circle.y == 3
+
+
+@pytest.mark.parametrize('x, y, radius',
+                         [
+                             ('1', 2, 10),
+                             (2, '4', 5),
+                             (3, 5, '7'),
+                         ])
+def test_circle_with_raises(x, y, radius):
+    with pytest.raises(TypeError):
+        circle.Circle(x, y, radius)
