@@ -1,4 +1,6 @@
+import time
 import pytest
+from string import ascii_lowercase, ascii_uppercase
 from oop.part_2.propetry import tree_obj
 from oop.part_1.classes_and_objects import figure, person
 from oop.part_1.class_methods import graph, translator
@@ -6,7 +8,9 @@ from oop.part_1.initializer_init import cpu
 from oop.part_2.private_public_method_setters_and_getters.linked_list\
     import ObjList
 from oop.part_2.descriptors import tv_program as tp
-from oop.part_3.setattr_getattr_getattribute_delattr import smartphone
+from oop.part_3.setattr_getattr_getattribute_delattr import smartphone, \
+    geyser_classic
+from oop.part_3.call_method import random_password
 
 
 @pytest.fixture()
@@ -102,3 +106,22 @@ def test_data_for_smartphone():
     phone_app = smartphone.AppPhone({'new': 1234, 'another': 12345})
     list(map(_smartphone.add_app, [vk_app, yt_app, phone_app]))
     return _smartphone
+
+
+@pytest.fixture()
+def test_data_for_geiser():
+    calc = geyser_classic.Calcium(time.time())
+    mech = geyser_classic.Mechanical(time.time())
+    aragon = geyser_classic.Aragon(time.time())
+    return {
+        'calc': calc,
+        'mech': mech,
+        'aragon': aragon,
+    }
+
+
+@pytest.fixture()
+def test_data_for_randon_pass():
+    chars = ascii_lowercase + ascii_uppercase + '.?/!34'
+    obj = random_password.RandomPassword(chars, 8, 30)
+    return obj

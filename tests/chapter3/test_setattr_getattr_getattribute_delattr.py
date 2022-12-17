@@ -1,7 +1,7 @@
 import pytest
 from loguru import logger
 from oop.part_3.setattr_getattr_getattribute_delattr import book, shop, \
-    course, museum, smartphone, circle
+    course, museum, smartphone, circle, geyser_classic
 
 
 @pytest.mark.parametrize('title, author, pages, year, exp_title, exp_pages',
@@ -123,3 +123,14 @@ def test_circle():
 def test_circle_with_raises(x, y, radius):
     with pytest.raises(TypeError):
         circle.Circle(x, y, radius)
+
+
+def test_filter_method(test_data_for_geiser):
+    geiser = geyser_classic.GeyserClassic()
+    geiser.add_filter(3, test_data_for_geiser['calc'])
+    geiser.add_filter(2, test_data_for_geiser['aragon'])
+    geiser.add_filter(1, test_data_for_geiser['mech'])
+    assert len(geiser.get_filters()) == 3
+    assert geiser.water_on() is True
+    geiser.remove_filter(2)
+    assert geiser.water_on() is False
