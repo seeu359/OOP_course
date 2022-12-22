@@ -1,5 +1,4 @@
 import pytest
-
 from oop.part_3.call_method import image_file_acceptor as ia
 
 
