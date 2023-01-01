@@ -57,8 +57,21 @@ class Track:
     def get_track(self):
         return tuple(self.track)
 
+    def __len__(self):
+        len_1 = ((self.start_x - self.track[0].to_x) ** 2 +
+                 (self.start_y - self.track[0].to_y) ** 2) ** 0.5
+        return int(len_1 + sum(
+            self.get_length(i) for i in range(1, len(self.track))))
+
+    def get_length(self, i):
+        return ((self.track[i-1].to_x - self.track[i].to_x) ** 2 +
+                (self.track[i-1].to_y - self.track[i].to_y) ** 2) ** 0.5
+
     def __eq__(self, other):
-        pass
+        return len(self) == len(other)
+
+    def __lt__(self, other):
+        return len(self) < len(other)
 
 
 class TrackLine:
@@ -67,3 +80,13 @@ class TrackLine:
         self.to_x = to_x
         self.to_y = to_y
         self.max_speed = max_speed
+
+
+track1 = Track(0, 0)
+track1.add_track(TrackLine(2, 4, 100))
+track1.add_track(TrackLine(5, -4, 100))
+track2 = Track(0, 1)
+track2.add_track(TrackLine(3, 2, 90))
+track2.add_track(TrackLine(10, 8, 90))
+
+res_eq = track1 == track2
