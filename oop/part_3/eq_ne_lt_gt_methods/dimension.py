@@ -119,4 +119,3 @@ stool = ShopItem('табуретка', 2000.99, Dimensions(500, 200, 200))
 
 lst_shop = [sneakers, umbrella, fridge, stool]
 lst_shop_sorted = sorted(lst_shop, key=lambda item: item.dim)
-
