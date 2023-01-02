@@ -55,8 +55,6 @@ text = input()
  Выведите на экран полученное число.
 """
 
-from itertools import chain
-
 
 class Morph:
 
@@ -97,16 +95,12 @@ text = input()
 def find_entered():
 
     result = list()
-    all_words_in_morphs = list(
-        chain(*[item.get_words() for item in dict_words])
-    )
-
     text_normalize = ''.join(
         [char for char in text if char.isalpha() or char == ' ']
     )
     for word in text_normalize.split():
-        if word.lower() in all_words_in_morphs and word not in result:
-            result.append(word)
+        [result.append(word) for string in dict_words
+         if word == string and word not in result]
 
     return len(result)
 
