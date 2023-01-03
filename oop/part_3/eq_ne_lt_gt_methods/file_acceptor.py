@@ -55,11 +55,3 @@ class FileAcceptor:
 
     def __str__(self):
         return str(self.extensions)
-
-
-acceptor1 = FileAcceptor("jpg", "jpeg", "png")
-acceptor2 = FileAcceptor("png", "bmp")
-
-filenames = ["boat.jpg", "ans.web.png", "text.txt", "www.python.doc",
-             "my.ava.jpg", "forest.jpeg", "eq_1.png", "eq_2.xls"]
-

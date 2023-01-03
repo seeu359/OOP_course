@@ -49,7 +49,8 @@ rates = {'rub': 72.5, 'dollar': 1.0, 'euro': 1.15}
 
 Также в CentralBank должен быть метод уровня класса:
 
-register(cls, money) - для регистрации объектов классов MoneyR, MoneyD и MoneyE.
+register(cls, money) - для регистрации объектов классов MoneyR, MoneyD и
+MoneyE.
 
 При регистрации значение __cb объекта money должно ссылаться на класс
 CentralBank. Через эту переменную объект имеет возможность обращаться к
@@ -146,17 +147,3 @@ class CentralBank:
     def to_rubles(cls, money):
         dollars = cls.to_dollars(money)
         return round(dollars * cls.rates['rub'], 2)
-
-
-rub = MoneyR(101000)
-dl = MoneyD(1393.1)
-euro = MoneyE(100)
-
-CentralBank.register(rub)
-CentralBank.register(dl)
-
-
-print(rub == dl)
-
-
-
