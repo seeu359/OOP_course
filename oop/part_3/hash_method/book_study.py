@@ -41,6 +41,7 @@ class BookStudy:
     def __hash__(self):
         return hash((self.name.lower(), self.author.lower()))
 
+
 lst_in = [
     'Python; Балакирев С.М.; 2020',
     'Python ООП; Балакирев С.М.; 2021',

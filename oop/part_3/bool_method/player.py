@@ -50,11 +50,12 @@ class Player:
         return self.score > 0
 
 
-lst_in = ['Балакирев; 34; 2048',
-'Mediel; 27; 0',
-'Влад; 18; 9012',
-'Nina P; 33; 0']
-
+lst_in = [
+    'Балакирев; 34; 2048',
+    'Mediel; 27; 0',
+    'Влад; 18; 9012',
+    'Nina P; 33; 0'
+]
 
 players = list()
 
@@ -63,5 +64,3 @@ for user in lst_in:
     players.append(Player(_user[0], int(_user[1]), int(_user[2])))
 
 players_filtered = list(filter(bool, players))
-print(players_filtered)
-print(players)

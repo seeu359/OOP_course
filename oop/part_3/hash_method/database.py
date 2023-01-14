@@ -100,4 +100,3 @@ for rec in lst_in:
 
     data = rec.split(';')
     db.write(Record(data[0], data[1], data[2]))
-
