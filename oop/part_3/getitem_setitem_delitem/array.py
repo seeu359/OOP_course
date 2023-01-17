@@ -79,8 +79,3 @@ class Integer:
         if not isinstance(value, int):
             raise ValueError('должно быть целое число')
         self.start_value = value
-
-
-a = Array(5, cell=Integer)
-
-print(a)

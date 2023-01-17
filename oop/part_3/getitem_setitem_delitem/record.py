@@ -48,7 +48,3 @@ class Record:
             self.__dict__[self.values[key]] = value
         except (IndexError, KeyError):
             raise IndexError('неверный индекс поля')
-
-
-record = Record(title='hqwf', super='2')
-print(record[1])

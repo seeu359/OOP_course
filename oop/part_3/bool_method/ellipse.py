@@ -69,4 +69,3 @@ for ellipse in lst_geom:
 
     if ellipse:
         ellipse.get_coords()
-
