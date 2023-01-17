@@ -56,4 +56,3 @@ it = TriangleListIterator(lst)
 
 for i in it:
     print(i)
-

@@ -38,18 +38,4 @@ class IterColumn:
     def __iter__(self):
 
         for i in range(len(self.lst)):
-            step = 1
-            for res in range(i + 1, len(self.lst[i])):
-                step += 1
-                print(self.lst[i][res])
-                yield self.lst[i][res]
-
-
-lst = [['x00', 'x01', 'x02'],
-       ['x10', 'x11', 'x12'],
-       ['x20', 'x21', 'x22'],
-       ['x30', 'x31', 'x32']]
-
-it = IterColumn(lst, 1)
-for x in it:
-    print(x)
+            yield self.lst[i][self.column]
