@@ -107,9 +107,3 @@ class ElBook(Thing):
         super().__init__(name, price)
         self.memory = memory
         self.frm = frm
-
-
-a = Table('qwf', 200, 100, 12)
-b = ElBook('qwef', 200, 143, 132)
-c = ElBook('qwef', 200, 143, 132)
-
