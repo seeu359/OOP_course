@@ -82,11 +82,3 @@ class MoneyR(Money, MoneyOperators):
 class MoneyD(Money, MoneyOperators):
     def __str__(self):
         return f"MoneyD: {self.money}"
-
-
-m1 = MoneyR(1)
-m2 = MoneyD(2)
-m = m1 + 10
-print(m)  # MoneyR: 11
-m = m1 - 5.4
-print(m)

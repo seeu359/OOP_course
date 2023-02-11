@@ -107,7 +107,3 @@ class Book(ShopItem, ShopUserView):
         self._title = title
         self._author = author
         self._year = year
-
-
-book = Book("Python ООП", "Балакирев", 2022)
-print(book)
