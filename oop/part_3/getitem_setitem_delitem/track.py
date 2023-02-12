@@ -53,5 +53,3 @@ track = Track(1, 2)
 track.add_point(2, 3, 500)
 
 a, b = track[0]
-
-print(a, b)
